@@ -1,70 +1,19 @@
 /* =======================================================================
-   MEMBER 1  |  base.css  |  Base, container, page layout, brand panel (CSS Grid + rem)
+   MEMBER 1  |  base.css  |  Base, container, page layout, brand panel
    Branch: feature/base-caracol
-   -----------------------------------------------------------------------
+
    MOBILE-FIRST RULES
    1. Write the PHONE styles first, with NO media query.
    2. Use min-width media queries ONLY. Never max-width.
    3. Use rem or % (thin borders may use px).
    4. Edit ONLY this file. Use the --variables from reset.css.
+
+   NOTE: CSS cannot nest comments. Never put a comment inside another
+   comment, and never leave commented-out code that contains comments.
    ======================================================================= */
 
 
-/* ---- STEP 0 (in index.html, not here) --------------------------------
-   Do Experiment 0 first. Then add this line inside <head> of index.html:
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   -------------------------------------------------------------------- */
-
-
-/* ---- 1. PHONE (no media query) ---------------------------------------
- .page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.page > main {
-  flex: 1; /* keeps the footer at the bottom */
-}
-
-.container {
-  width: 100%;
-  padding-inline: 1rem;
-}
-
-.login-layout {
-  display: grid;
-  grid-template-columns: 1fr; /* ONE column */
-  gap: 1.5rem;
-  padding-block: 1.5rem;
-}
-
-.brand-panel {
-  background: var(--navy);
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  border-radius: var(--radius);
-}
-
-.brand-panel__badge {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--navy);
-  font-weight: bold;
-  font-size: 0.875rem;
-  border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-}
-
-.brand-panel__title {
-  font-size: 1.75rem;
-}
-
-.brand-panel__perks {
-  display: none; /* phones show only what matters most */
-}
-   -------------------------------------------------------------------- */
+/* ---- 1. PHONE (no media query) --------------------------------------- */
 
 .page {
   min-height: 100vh;
@@ -72,6 +21,7 @@
   flex-direction: column;
 }
 
+/* keeps the footer at the bottom */
 .page > main {
   flex: 1;
 }
@@ -81,6 +31,7 @@
   padding-inline: 1rem;
 }
 
+/* ONE column */
 .login-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -94,6 +45,7 @@
   text-align: center;
   padding: 1.5rem 1rem;
   border-radius: var(--radius);
+  box-shadow: 0 0.375rem 1.125rem rgba(0, 0, 0, 0.2);
 }
 
 .brand-panel__badge {
@@ -101,32 +53,33 @@
   background: var(--gold);
   color: var(--navy);
   font-weight: bold;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  line-height: 1;
   border-radius: 999px;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
 }
 
 .brand-panel__title {
   font-size: 1.75rem;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
 }
 
+.brand-panel p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* phones show only what matters most */
 .brand-panel__perks {
   display: none;
 }
 
 
-
-/* ---- 2. 768px and up (tablets) ---------------------------------------
-@media (min-width: 768px) {
-  .container {
-    padding-inline: 2rem;
-  }
-
-  .brand-panel {
-    padding: 2rem;
-  }
-}
-   -------------------------------------------------------------------- */
+/* ---- 2. TABLETS: 768px and up ---------------------------------------- */
 
 @media (min-width: 768px) {
   .container {
@@ -139,34 +92,10 @@
 }
 
 
-
-/* ---- 3. 1024px and up (laptops) --------------------------------------
-  @media (min-width: 1024px) {
-  .login-layout {
-    grid-template-columns: 1fr 1fr; /* TWO equal columns */
-    align-items: center;
-    gap: 3rem;
-    padding-block: 3rem;
-  }
-
-  .brand-panel {
-    text-align: left;
-    padding: 3rem;
-  }
-
-  .brand-panel__title {
-    font-size: 2.5rem;
-  }
-
-  .brand-panel__perks {
-    display: block; /* the extra list is ADDED back */
-    margin-top: 1.5rem;
-    padding-left: 1.25rem;
-  }
-}
-   -------------------------------------------------------------------- */
+/* ---- 3. LAPTOPS: 1024px and up --------------------------------------- */
 
 @media (min-width: 1024px) {
+  /* TWO equal columns */
   .login-layout {
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -176,32 +105,32 @@
 
   .brand-panel {
     text-align: left;
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .brand-panel__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
+  /* the extra list is ADDED back */
   .brand-panel__perks {
     display: block;
-    margin-top: 1.5rem;
-    padding-left: 1.25rem;
+    margin-top: 1.25rem;
+    padding-left: 1.1rem;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .brand-panel__perks li + li {
+    margin-top: 0.3rem;
   }
 }
 
 
-
-/* ---- 4. 1280px and up (desktops) -------------------------------------
-  @media (min-width: 1280px) {
-  .container {
-    max-width: 1200px;
-    margin-inline: auto; /* centered */
-  }
-}
-   -------------------------------------------------------------------- */
+/* ---- 4. DESKTOPS: 1280px and up -------------------------------------- */
 
 @media (min-width: 1280px) {
+  /* centered */
   .container {
     max-width: 1200px;
     margin-inline: auto;
