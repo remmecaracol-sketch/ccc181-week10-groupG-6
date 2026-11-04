@@ -67,6 +67,13 @@ Using **Show media queries** and dragging slowly from 360 px to 1280 px, the lay
 > No width looked broken, and there was no sideways scrollbar at any width, even when the error messages were showing.
 
 Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png`.
+<img width="720" height="3392" alt="360" src="https://github.com/user-attachments/assets/d8a45a90-33d1-462a-9d6e-3d7aea921497" />
+<img width="1536" height="2704" alt="768" src="https://github.com/user-attachments/assets/a5e57ea0-c4eb-4481-a081-5b7e4aecd35c" />
+<img width="2048" height="2000" alt="1024" src="https://github.com/user-attachments/assets/69f42891-4fbf-4e2f-8ed0-7e950930abd1" />
+<img width="2560" height="2000" alt="1280" src="https://github.com/user-attachments/assets/8dde5cb6-3cf2-4295-8a5d-cf122f723111" />
+
+
+
 
 ## What our group learned (leader writes this last)
 
