@@ -23,9 +23,9 @@ npm run build        # must finish with no errors before you submit
 
 | Item | Your answer |
 | --- | --- |
-| Group 6 | |
-| IT3-B | |
-| https://github.com/remmecaracol-sketch/ccc181-week10-groupG-6.git | |
+| Group Number| Group-6 |
+| Section | IT3-B |
+| Repository URL| https://github.com/remmecaracol-sketch/ccc181-week10-groupG-6.git |
 
 ## Members (each member fills in their own row in their own commit)
 
@@ -40,7 +40,8 @@ npm run build        # must finish with no errors before you submit
 What did the page look like in DevTools phone mode **before** adding the viewport meta tag?
 What changed **after** adding it?
 
-> (write your answer here)
+> **Before:** The browser treated the phone as a ~980px-wide screen, so the page was scaled down and looked zoomed out. Reading anything required pinching to zoom.
+> **After:** The viewport tag told the browser to use `width=device-width`, so the page rendered at 360px at 100% scale. The text was clear, no zooming was needed, and the layout fit the phone screen.
 
 ## DevTools test results
 
@@ -48,7 +49,7 @@ What changed **after** adding it?
 | --- | --- | --- |
 | 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | |
 | 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | |
-| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | |
+| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. |  |
 | 1280 px | Content centered and stops at 1200px. | |
 
 ### Breakpoints I observed
