@@ -23,9 +23,9 @@ npm run build        # must finish with no errors before you submit
 
 | Item | Your answer |
 | --- | --- |
-| Group 6 | |
-| IT3-B | |
-| https://github.com/remmecaracol-sketch/ccc181-week10-groupG-6.git | |
+| Group Number| Group-6 |
+| Section | IT3-B |
+| Repository URL| https://github.com/remmecaracol-sketch/ccc181-week10-groupG-6.git |
 
 ## Members (each member fills in their own row in their own commit)
 
