@@ -48,19 +48,26 @@ What changed **after** adding it?
 
 | Width | What must be true | Pass? |
 | --- | --- | --- |
-| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | |
-| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | |
-| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. |  |
-| 1280 px | Content centered and stops at 1200px. | |
+| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | Pass |
+| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | Pass |
+| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | Pass  |
+| 1280 px | Content centered and stops at 1200px. | Pass |
 
 ### Breakpoints I observed
 
 Using **Show media queries** and dragging slowly from 360 px to 1280 px, the layout changed at these exact widths:
 
-> (write the widths here, and say whether any width looked broken)
+Using **Show media queries** and dragging slowly from 360 px to 1280 px, the layout changed at these exact widths:
+
+> The layout changed at **768 px**, **1024 px**, and **1280 px**.
+> - **768 px:** the container got wider side padding (2rem) and the brand panel got more padding. The navigation moved into one row, and the checkbox row and the bottom buttons sat side by side.
+> - **1024 px:** the brand panel and login card moved side by side in 2 columns. The heading grew to 2.5rem, the extra perks list appeared, and the footer changed to 3 columns.
+> - **1280 px:** the container stopped at a max-width of 1200 px and stayed centered instead of stretching edge to edge.
+>
+> No width looked broken, and there was no sideways scrollbar at any width, even when the error messages were showing.
 
 Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png`.
 
 ## What our group learned (leader writes this last)
 
-> (write your answer here)
+> > We learned that mobile-first means writing the phone layout as the default and only adding `min-width` media queries as the screen gets wider, instead of shrinking a desktop design down. Without the viewport meta tag, the phone treated the page like a wide desktop screen, so none of our mobile styles worked properly. We also learned how Flexbox and Grid fit together: Flexbox for the navbar and form, and Grid for the page layout and footer. Working on one CSS file per member and merging through pull requests meant our code did not clash, and reviewing each other's work helped us catch mistakes before they reached `main`.
