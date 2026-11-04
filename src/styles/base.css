@@ -1,70 +1,16 @@
 /* =======================================================================
-   MEMBER 1  |  base.css  |  Base, container, page layout, brand panel (CSS Grid + rem)
+   MEMBER 1 | base.css | Base, container, page layout, brand panel
    Branch: feature/base-caracol
-   -----------------------------------------------------------------------
+
    MOBILE-FIRST RULES
-   1. Write the PHONE styles first, with NO media query.
-   2. Use min-width media queries ONLY. Never max-width.
+   1. Phone styles first, with NO media query.
+   2. Use min-width media queries ONLY.
    3. Use rem or % (thin borders may use px).
-   4. Edit ONLY this file. Use the --variables from reset.css.
+   4. Use the --variables from reset.css.
    ======================================================================= */
 
 
-/* ---- STEP 0 (in index.html, not here) --------------------------------
-   Do Experiment 0 first. Then add this line inside <head> of index.html:
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   -------------------------------------------------------------------- */
-
-
-/* ---- 1. PHONE (no media query) ---------------------------------------
- .page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.page > main {
-  flex: 1; /* keeps the footer at the bottom */
-}
-
-.container {
-  width: 100%;
-  padding-inline: 1rem;
-}
-
-.login-layout {
-  display: grid;
-  grid-template-columns: 1fr; /* ONE column */
-  gap: 1.5rem;
-  padding-block: 1.5rem;
-}
-
-.brand-panel {
-  background: var(--navy);
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  border-radius: var(--radius);
-}
-
-.brand-panel__badge {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--navy);
-  font-weight: bold;
-  font-size: 0.875rem;
-  border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-}
-
-.brand-panel__title {
-  font-size: 1.75rem;
-}
-
-.brand-panel__perks {
-  display: none; /* phones show only what matters most */
-}
-   -------------------------------------------------------------------- */
+/* ---- 1. PHONE (no media query) --------------------------------------- */
 
 .page {
   min-height: 100vh;
@@ -115,18 +61,7 @@
 }
 
 
-
-/* ---- 2. 768px and up (tablets) ---------------------------------------
-@media (min-width: 768px) {
-  .container {
-    padding-inline: 2rem;
-  }
-
-  .brand-panel {
-    padding: 2rem;
-  }
-}
-   -------------------------------------------------------------------- */
+/* ---- 2. TABLETS: 768px and up ---------------------------------------- */
 
 @media (min-width: 768px) {
   .container {
@@ -139,38 +74,14 @@
 }
 
 
-
-/* ---- 3. 1024px and up (laptops) --------------------------------------
-  @media (min-width: 1024px) {
-  .login-layout {
-    grid-template-columns: 1fr 1fr; /* TWO equal columns */
-    align-items: center;
-    gap: 3rem;
-    padding-block: 3rem;
-  }
-
-  .brand-panel {
-    text-align: left;
-    padding: 3rem;
-  }
-
-  .brand-panel__title {
-    font-size: 2.5rem;
-  }
-
-  .brand-panel__perks {
-    display: block; /* the extra list is ADDED back */
-    margin-top: 1.5rem;
-    padding-left: 1.25rem;
-  }
-}
-   -------------------------------------------------------------------- */
+/* ---- 3. LAPTOPS: 1024px and up --------------------------------------- */
 
 @media (min-width: 1024px) {
   .login-layout {
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     align-items: center;
-    gap: 3rem;
     padding-block: 3rem;
   }
 
@@ -191,19 +102,12 @@
 }
 
 
-
-/* ---- 4. 1280px and up (desktops) -------------------------------------
-  @media (min-width: 1280px) {
-  .container {
-    max-width: 1200px;
-    margin-inline: auto; /* centered */
-  }
-}
-   -------------------------------------------------------------------- */
+/* ---- 4. DESKTOPS: 1280px and up -------------------------------------- */
 
 @media (min-width: 1280px) {
   .container {
     max-width: 1200px;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
