@@ -41,6 +41,7 @@ What did the page look like in DevTools phone mode **before** adding the viewpor
 What changed **after** adding it?
 
 > **Before:** The browser treated the phone as a ~980px-wide screen, so the page was scaled down and looked zoomed out. Reading anything required pinching to zoom.
+> 
 > **After:** The viewport tag told the browser to use `width=device-width`, so the page rendered at 360px at 100% scale. The text was clear, no zooming was needed, and the layout fit the phone screen.
 
 ## DevTools test results
