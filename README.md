@@ -31,9 +31,9 @@ npm run build        # must finish with no errors before you submit
 
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
-| 1 |Remme Caracol |  remmecaracol-sketch| | `base.css` | |Added the viewport meta tag, wrote base.css (mobile-first base styles), and did Experiment 0| 
-| 2 |Jessabel M. Janolino | jessabeljanolino-hash| | `nav.css` | |Wrote nav.css|
-| 3 |Gail H. Pagutayao| devbygail| | `form.css` | |Wrote form.css|
+| 1 |Remme Caracol |  remmecaracol-sketch| base.css | |Added the viewport meta tag, wrote base.css (mobile-first base styles), and did Experiment 0| 
+| 2 |Jessabel M. Janolino | jessabeljanolino-hash|  nav.css | |Wrote nav.css|
+| 3 |Gail H. Pagutayao| devbygail| form.css | |Wrote form.css|
 
 ## Experiment 0: the page without the viewport tag
 
