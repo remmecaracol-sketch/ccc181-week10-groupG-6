@@ -31,16 +31,17 @@ npm run build        # must finish with no errors before you submit
 
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
-| 1 |Remme Caracol | | remmecaracol-sketch| | `base.css` | |Added the viewport meta tag, wrote base.css (mobile-first base styles), and did Experiment 0| 
-| 2 |Jessabel M. Janolino | |jessabeljanolino-hash| | `nav.css` | |Wrote nav.css|
-| 3 |Gail H. Pagutayao| |devbygail| | `form.css` | |Wrote form.css|
+| 1 |Remme Caracol | remmecaracol-sketch| | `base.css`  |Added the viewport meta tag, wrote base.css (mobile-first base styles), and did Experiment 0| 
+| 2 |Jessabel M. Janolino | jessabeljanolino-hash| | `nav.css`  |Wrote nav.css|
+| 3 |Gail H. Pagutayao| devbygail| | `form.css`  |Wrote form.css|
 
 ## Experiment 0: the page without the viewport tag
 
 What did the page look like in DevTools phone mode **before** adding the viewport meta tag?
 What changed **after** adding it?
 
-> (write your answer here)
+> **Before:** The browser treated the phone as a ~980px-wide screen, so the page was scaled down and looked zoomed out. Reading anything required pinching to zoom.
+> **After:** The viewport tag told the browser to use `width=device-width`, so the page rendered at 360px at 100% scale. The text was clear, no zooming was needed, and the layout fit the phone screen.
 
 ## DevTools test results
 
@@ -48,7 +49,7 @@ What changed **after** adding it?
 | --- | --- | --- |
 | 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | |
 | 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | |
-| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | |
+| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. |  |
 | 1280 px | Content centered and stops at 1200px. | |
 
 ### Breakpoints I observed
