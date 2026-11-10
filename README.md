@@ -74,3 +74,58 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 ## What our group learned (leader writes this last)
 
 > > We learned that mobile-first means writing the phone layout as the default and only adding `min-width` media queries as the screen gets wider, instead of shrinking a desktop design down. Without the viewport meta tag, the phone treated the page like a wide desktop screen, so none of our mobile styles worked properly. We also learned how Flexbox and Grid fit together: Flexbox for the navbar and form, and Grid for the page layout and footer. Working on one CSS file per member and merging through pull requests meant our code did not clash, and reviewing each other's work helped us catch mistakes before they reached `main`.
+
+
+
+## How to run?
+
+backend
+> # Part 2: Express backend login
+
+## How to run
+
+You need two terminals open at the same time.
+
+**Terminal 1: backend (folder `server`)**
+
+```bash
+cd server
+npm install
+copy .env.example .env
+npm start
+```
+
+You should see `API running on http://localhost:3000`.
+
+**Terminal 2: front end (project root)**
+
+```bash
+npm install
+copy .env.example .env
+npm run dev
+```
+
+Open http://localhost:5173. The health check is http://localhost:3000/api/v1/health and must return `{"status":"ok"}`.
+
+The real `.env` files are never committed. Only the two `.env.example` files (with fake values) are in the repo.
+
+## API summary
+
+| Method | Path | Success | Errors |
+|---|---|---|---|
+| GET | `/api/v1/health` | 200 `{"status":"ok"}` | none |
+| POST | `/api/v1/sessions` | 200 `{token, user}` | 400 missing fields, 401 `Invalid email or password.` |
+| GET | `/api/v1/users/me` | 200 user (needs `Authorization: Bearer <token>`) | 401 `Not logged in.` |
+
+Other answers: unknown route is 404 `{"error":"Not found."}`, a crash is 500 `{"error":"Something went wrong."}`. Full details are in `docs/API-SPEC.md`. The Postman collection is in `docs/postman/CampusConnect.postman_collection.json`.
+
+**Demo account:** `student@campusconnect.test` / `Campus26` (name: Demo Student)
+
+## Who did what (Part 2)
+
+| Member | Name | GitHub | What I did in Part 2 |
+|---|---|---|---|
+| 1 | Remme Caracol| remmecaracol-sketch | Created the server/ project with Express, dotenv, CORS, and JSON parsing. Implemented POST /api/v1/sessions, including input validation, bcryptjs password verification, a JWT valid for one hour, and the demo user with a hashed password. |
+| 2 | Jessabel M. Janolino | jessabeljanolino-hash |Implemented GET /api/v1/users/me along with the token middleware and the 404 and 500 handlers. Wrote docs/API-SPEC.md (including the events design), assembled the Postman collection, and captured the Postman screenshots. Also reviewed Member 1’s pull request. |
+| 3 | Gail H. Pagutayao | devbygail |Set up the frontend API address through the root .env and .env.example. Wrote login() and getMe() in src/api/auth.ts using fetch. Updated src/components/LoginForm.tsx to keep the client-side validation, stop invalid input from reaching the API, and handle the Loading, Success, and Error states. Built the Welcome screen that displays the name and email returned by the backend. Stored the token in sessionStorage, restored the login session on refresh via /api/v1/users/me, cleared invalid or expired tokens, and added Log out. Added browser console logging for outgoing request payloads, response statuses and data, and API errors to help with debugging, with passwords and tokens masked. Styled the new messages and Welcome screen in src/styles/auth.css and imported that stylesheet in src/main.tsx.|
+
