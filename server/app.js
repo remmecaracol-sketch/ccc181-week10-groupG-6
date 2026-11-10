@@ -16,13 +16,6 @@ const users = [
     email: "student@campusconnect.test",
     passwordHash: bcrypt.hashSync("Campus26", 10),
   },
-
-  {
-    id: 2,
-    name: "2nd Demo Student",
-    email: "gervy1234@gmail.com",
-    passwordHash: bcrypt.hashSync("gervy1234", 10),
-  },
 ];
 
 function publicUser(user) {
